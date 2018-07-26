@@ -7,7 +7,7 @@ export default class MenuContainer extends Component{
         return (
             <div className='menu-container'>
                 <MenuItem menuitemname='目录项1'/>
-            </div>
+            </div> 
         )
     }
 }
