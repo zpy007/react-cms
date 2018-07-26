@@ -8,7 +8,7 @@ export default class MenuItem extends Component{
         return(
             <div className='menu-item' onClick={()=>{this.handleMenuItemClick()}}>
                 <span>{this.props.menuitemname}</span> 
-            </div>  
+            </div>   
         )
     }
 }
