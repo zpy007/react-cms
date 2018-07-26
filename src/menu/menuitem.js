@@ -7,7 +7,7 @@ export default class MenuItem extends Component{
     render(){
         return(
             <div className='menu-item' onClick={()=>{this.handleMenuItemClick()}}>
-                <span>{this.props.menuitemname}</span>
+                <span>{this.props.menuitemname}</span> 
             </div>
         )
     }
