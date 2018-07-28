@@ -10,7 +10,7 @@ export default class MenuContainer extends Component{
     }
     componentWillMount(){
         this.setState({
-            menuarray:['客户信息','抵押物信息','贷后检查记录']
+            menuarray:['clientinfotab','guaranteeinfotab','aftercreditinfotab']
         })
         console.log('componentWillMount')
     }
