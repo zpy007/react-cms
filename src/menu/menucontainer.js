@@ -1,5 +1,8 @@
-import React,{Component} from 'react'
+import React,{Component} from 'react';
 import MenuItem from './menuitem';
+import ClientInfoTab from  '../tabs/clientinfotab';
+import AftercreditInfoTab from '../tabs/aftercreditinfotab';
+import GuaranteeInfoTab from '../tabs/guaranteeinfotab';
 
 export default class MenuContainer extends Component{
     constructor(){
@@ -10,7 +13,8 @@ export default class MenuContainer extends Component{
     }
     componentWillMount(){
         this.setState({
-            menuarray:['clientinfotab','guaranteeinfotab','aftercreditinfotab']
+            menuarray:['客户信息','抵押物信息','贷后信息']
+            //menuarray:[<ClientInfoTab/>,<GuaranteeInfoTab/>,<AftercreditInfoTab/>]
         })
         console.log('componentWillMount')
     }
@@ -18,9 +22,7 @@ export default class MenuContainer extends Component{
     render(){
         return (
             <div className='menu-container'>
-                
-                {this.state.menuarray.map((item,i)=><MenuItem menuitemname={item} key={i}/> )}
-                
+                {this.state.menuarray.map((item,i)=><MenuItem menuitemname={item} key={i} /> )}
             </div> 
         )
     }

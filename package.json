@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classname": "^0.0.0",
+    "classnames": "^2.2.6",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "react-scripts": "^1.1.4",
+    "react-tree-menu": "^1.5.0",
     "reacteasyui": "^1.0.5"
   },
   "scripts": {
