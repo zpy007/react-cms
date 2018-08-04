@@ -1,87 +1,110 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import MenuContainer from './menu/menucontainer';
-import ClientInfoTab from  './tabs/clientinfotab';
-import AftercreditInfoTab from './tabs/aftercreditinfotab'
-import GuaranteeInfoTab from './tabs/guaranteeinfotab'
-import ClassNames from 'classnames'
-import logo from './logo.svg';
-import Wrapper from './Wrapper/Wrapper'
 import './App.css';
 
 class App extends Component {
   static childContextTypes={
     openedTab:PropTypes.array,
     activeTab:PropTypes.string,
-    _insertTab:PropTypes.func
+    _insertTab:PropTypes.func,
+    _activeTab:PropTypes.func
   }
   constructor(){
     super();
-    this.state={
-      openedTab:[],
-      activeTab:''
+    this.state = {
+      openedTab: [],
+      activeTab: '',
+      styles: {
+        tabcontent: {
+          display: 'none'
+        },
+        displaytabitem:{
+          display:'block'
+        }
+      }
     }
   }
   componentWillUpdate(){
-    console.log("updage");
+    console.log("update");
 
   }
   getChildContext(){
     return{
       openedTab:this.state.openedTab,
       activeTab:'',
-      _insertTab:this._insertTab.bind(this)
+      _insertTab:this._insertTab.bind(this),
+      _activeTab:this._activeTab.bind(this)
     }
   }
+  
   _insertTab(item){
-    console.log("App::this._insertTab--->"+item);
+    console.log("App::this._insertTab--->"+item.title);
     this.state.openedTab.push(item);
     this.setState({
       openedTab:this.state.openedTab
     });
     console.log(this.state.openedTab);
-  }
-  _activeTab(item){
     
   }
+  watch(){
+    console.log("App::watch:this.state.activeTab: "+this.state.activeTab);
+  }
+  handleChangeTab(item) {
+    console.log("App::handleChangeTab " + item.title + "--|");
+    console.log(this.state.styles.tabcontent)
+    this.setState({
+      styles: {
+        tabcontent: {
+          display:'none'
+        }
+      }
+    })
+
+  }
+
+  _activeTab(item) {
+    console.log("App::_activeTab " + item.title);
+    this.handleChangeTab(item);
+    this.setState(() => {
+      return {
+        activeTab: item.title
+      }
+    });
+  }
   render() {
-    console.log("render");
     return (
+
+      //style={this.state.styles.tabcontent}
+      //style={item.title===this.state.activeTab?this.state.styles.displaytabitem:{}}
+      //id={item.title} ref={(div)=>{this.mydiv=div}}
+      /*.tabcontent {
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }*/
       <div className="App">
         <div className="menu">
           <MenuContainer />
         </div>
         <div className="tabcontainer">
-          <div className="tabtitle">
+          <div className="tabtitle" >
               <span>按钮</span>
           </div>
           <div className="tabcontent">
-              {this.state.openedTab.map((Tab,i)=>{
-                /*return (
-                  <div  key={i}>
-                    {Tab}
+              {this.state.openedTab.map((item,i)=>{
+                console.log("this.item.title: "+item.title);
+                console.log("this.state.activeTab: "+item.title);
+                return (
+                  <div key={i} style={item.title===this.state.activeTab?{}:this.state.styles.tabcontent}>
+                      {item.target}
                   </div>
-                );*/
-                switch(Tab){
-                    case "客户信息":
-                      console.log(Tab);
-                      return <ClientInfoTab key={i}/>
-                    case "抵押物信息":
-                      console.log(Tab);
-                      return <GuaranteeInfoTab key={i}/>
-                    case "贷后信息":
-                      console.log(Tab);
-                      return <AftercreditInfoTab key={i}/>
-                    default:
-                      console.log(Tab); 
-                      return <ClientInfoTab key={i}/>
-                }
+                )
               })}
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
