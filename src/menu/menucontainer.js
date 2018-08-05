@@ -14,9 +14,9 @@ export default class MenuContainer extends Component{
     componentWillMount(){
         this.setState({
             menuItem: [
-                { title: 'clientinfotab', titleLang: '客户信息',target:<ClientInfoTab/>}, 
-                { title: 'guaranteeinfotab', titleLang: '抵押物信息', target:<GuaranteeInfoTab/>}, 
-                { title: 'aftercreditinfotab', titleLang: '贷后信息', target:<AftercreditInfoTab/>}
+                { "title": "clientinfotab", "titleLang": "客户信息","target":<ClientInfoTab/>}, 
+                { "title": "guaranteeinfotab", "titleLang": "抵押物信息", "target":<GuaranteeInfoTab/>}, 
+                { "title": "aftercreditinfotab", "titleLang": "贷后信息", "target":<AftercreditInfoTab/>}
             ]
         })
         console.log('componentWillMount')
