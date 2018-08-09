@@ -10,7 +10,7 @@ export default class MenuContainer extends Component{
     }
     componentWillMount(){
         this.setState({
-            menuarray:['clientinfotab','guaranteeinfotab','aftercreditinfotab']
+            menuarray:['ClientInfoTab','GuaranteeInfoTab','AftercreditInfoTab']
         })
         console.log('componentWillMount')
     }

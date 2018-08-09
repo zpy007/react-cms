@@ -15,24 +15,34 @@ class App extends Component {
     this.state={
       openedTab:[],
       activeTab:'',
-      com:<ClientInfoTab/>
+
     }
   }
   getChildContext(){
     return{
       openedTab:this.state.openedTab,
-      activeTab:''
+      activeTab:'',
+      
     }
   }
-  _insertTab(){
-    return(
+  _createTab(item){
+
+  }
+  _insertTab(item){
+    //console.log("App::_inertTab")
+    if(item==="clientinfotab"){
+      return(
         <ClientInfoTab />
       )
+    }
+  }
+  _activeTab(){
+    
   }
   render() {
     return (
       <div className="App">
-        <div className="menu">
+        <div className="menu"> 
           <MenuContainer />
         </div>
         <div className="tabcontainer">
@@ -40,7 +50,7 @@ class App extends Component {
               <span>按钮</span>
           </div>
           <div className="tabcontent">
-            {this.state.com}
+            {this._insertTab(ClientInfoTab)}
           </div>
         </div>
       </div>
