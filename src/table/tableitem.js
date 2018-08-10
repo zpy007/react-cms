@@ -7,9 +7,9 @@ export default class TableItem extends Component {
         return (
             
             <tr className="tableitem">
-                {columns.map((column)=>{
+                {columns.map((column,i)=>{
                     return(
-                        <td>
+                        <td key={i}>
                             {data[column.field]}
                         </td>
                     )
