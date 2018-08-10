@@ -42,7 +42,8 @@ export default class ClientInfoTab extends Component{
                         { field: "clientamount", title: "授信额度" },
                         { field: "clientlimit", title: "期限" },
                         { field: "clientusage", title: "用途" }
-                        ]} Data={mockjson2}/>
+                        ]} 
+                        Data={mockjson2}/>
                 </div>
             </div>
         )

@@ -3,12 +3,14 @@ import TableItem from './tableitem'
 
 export default class TableContainer extends Component{
     render(){
+        var columns = this.props.Columns;
+        var dataes = this.props.Data.data;
         return(
             <div className="tablecontainer">
                 <table>
                     <thead>
                         <tr>
-                            {this.props.Columns.map((column,i)=>{
+                            {columns.map((column,i)=>{
                                 return (
                                     <th key={i}>
                                         {column.title/*设置表头*/}
@@ -19,12 +21,12 @@ export default class TableContainer extends Component{
                     </thead>
                     <tbody>
                         {console.log("TableContainer:")}
-                        {console.log(this.props.Data.data)}
+                        {console.log(dataes)}
                             {
-                                this.props.Data.data.map((data,i)=>{
+                                dataes.map((data,i)=>{
                                 console.log("TableContainer"+data);
                                 return (
-                                    <TableItem Data={data} key={i}/>
+                                    <TableItem Columns={columns} Data={data} key={i}/>
                                 )
                             })}
                     </tbody>
