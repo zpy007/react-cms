@@ -28,8 +28,6 @@ export default class TableContainer extends Component{
                         </tr>
                     </tbody>
                 </table>
-                
-                
             </div>
         )
     }
