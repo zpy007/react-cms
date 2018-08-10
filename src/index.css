@@ -18,3 +18,12 @@ body {
   border: solid;
   margin: 10px;
 }
+
+.display-tab{
+  display:block;
+}
+.hide-tab{
+  display: none;
+}
+
+

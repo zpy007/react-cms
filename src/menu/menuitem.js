@@ -4,15 +4,19 @@ import PropTypes from 'prop-types'
 export default class MenuItem extends Component{
     static contextTypes={
         openedTab:PropTypes.array,
-        activeTab:PropTypes.string
+        activeTab:PropTypes.string,
+        _insertTab:PropTypes.func,
+        _activeTab:PropTypes.func
     }
     _insertTab(item){
-        this.context.openedTab.push(item);
-        //创建item组件到App组件中
-        
+        //App组件动态添加一个tab
+        console.log("MenuItem::_inertTab");
+        this.context._insertTab(item);
     }
     _activeTab(item){
-        //显示item组件
+        //切换到相应的tab
+        this.context._activeTab(item);
+        //tem的 className为显示 其他的itemclass为隐藏
     }
 
     _createTab(item){
@@ -22,8 +26,6 @@ export default class MenuItem extends Component{
     handleMenuItemClick(item){
         console.log('menuitem clicked')
         console.log(this.context.openedTab);
-        //判断相应选项卡是否存在
-            
         if(this.context.openedTab.includes(item))
         {
             //如果存在就切换到相应选项卡
@@ -42,8 +44,8 @@ export default class MenuItem extends Component{
     }
     render(){
         return(
-            <div className='menu-item' onClick={()=>{this.handleMenuItemClick(this.props.menuitemname)}}>
-                <span>{this.props.menuitemname}</span> 
+            <div className='menu-item' onClick={()=>{this.handleMenuItemClick(this.props.menuItem)}}>
+                <span>{this.props.menuItem.titleLang}</span> 
             </div>   
         )
     }
