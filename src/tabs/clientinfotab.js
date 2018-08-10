@@ -14,11 +14,11 @@ var mockjson2={
             "clientusage": "做生意"
         }, {
             "clientname": "赵云",
-            "cientid": "150424196309240049",
+            "clientid": "150424196309240049",
             "clientaddress": "万达C区",
             "clientamount":"200000",
-            "clientlimit": "13947607658",
-            "clientusage": 100000
+            "clientlimit": "3",
+            "clientusage": "周转资金"
         }
     ]
 }
