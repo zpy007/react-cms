@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 
-var mockjson={
+var mockjson1={
     "status": 200,
     "message": "aftercreditinfotab",
     "data": [

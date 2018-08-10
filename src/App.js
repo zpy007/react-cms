@@ -84,7 +84,7 @@ class App extends Component {
         border-top: none;
       }*/
       <div className="App">
-        <div className="menu">
+        <div className="menu"> 
           <MenuContainer />
         </div>
         <div className="tabcontainer">

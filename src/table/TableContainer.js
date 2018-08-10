@@ -8,24 +8,25 @@ export default class TableContainer extends Component{
                 <table>
                     <thead>
                         <tr>
-                            {this.props.Columns.map((column)=>{
+                            {this.props.Columns.map((column,i)=>{
                                 return (
-                                    <th>
+                                    <th key={i}>
                                         {column.title/*设置表头*/}
                                     </th>
                                 )
                             })}
                         </tr>
                     </thead>
-                        <tr>
-                        </tr>
                     <tbody>
-                        <tr>
-                            <TableItem />
-                        </tr>
-                        <tr>
-                            <TableItem />
-                        </tr>
+                        {console.log("TableContainer:")}
+                        {console.log(this.props.Data.data)}
+                            {
+                                this.props.Data.data.map((data,i)=>{
+                                console.log("TableContainer"+data);
+                                return (
+                                    <TableItem Data={data} key={i}/>
+                                )
+                            })}
                     </tbody>
                 </table>
             </div>

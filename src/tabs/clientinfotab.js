@@ -1,6 +1,28 @@
 import React,{Component} from 'react'
 import TableContainer from '../table/tablecontainer';
 
+var mockjson2={
+    "status": 200,
+    "message": "aftercreditinfotab",
+    "data": [
+        {
+            "clientname": "张飞",
+            "clientid": "150424198707110054",
+            "clientaddress": "万达A区",
+            "clientamount": "1000000",
+            "clientlimit": 1,
+            "clientusage": "做生意"
+        }, {
+            "clientname": "赵云",
+            "cientid": "150424196309240049",
+            "clientaddress": "万达C区",
+            "clientamount":"200000",
+            "clientlimit": "13947607658",
+            "clientusage": 100000
+        }
+    ]
+}
+
 
 export default class ClientInfoTab extends Component{
     render(){
@@ -20,7 +42,7 @@ export default class ClientInfoTab extends Component{
                         { field: "clientamount", title: "授信额度" },
                         { field: "clientlimit", title: "期限" },
                         { field: "clientusage", title: "用途" }
-                        ]} />
+                        ]} Data={mockjson2}/>
                 </div>
             </div>
         )

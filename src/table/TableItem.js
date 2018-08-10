@@ -1,11 +1,16 @@
-import React,{Component} from 'react'
+import React, { Component } from 'react'
 
-export default class TableItem extends Component{
-    render(){
-        return(
-            <div className="tableitem">
-                表格项
-            </div>
+export default class TableItem extends Component {
+    render() {
+        return (
+            <tr className="tableitem">
+                <td>
+                    {this.props.Data.clientname}
+                </td>
+                <td>
+                    {this.props.Data.clientid}
+                </td>
+            </tr>
         )
     }
 }
