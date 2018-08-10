@@ -1,5 +1,5 @@
-import React,{Component} from 'react'
-import TableItem from './tableitem'
+import React,{Component} from './react'
+import TableItem from './tableitem' 
 
 export default class TableContainer extends Component{
     render(){
