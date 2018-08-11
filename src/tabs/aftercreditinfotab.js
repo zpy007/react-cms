@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import SearchComponent from './searchcomponent'
 import './tabstyle.css'
 
 var mockjson1={
@@ -49,7 +50,7 @@ export default class AftercreditInfoTab extends Component{
             <div>
                 <span>贷后信息选项卡</span>
                 <div>
-                    <div><span>【搜索框】搜索按钮</span></div>
+                    <SearchComponent/>
                     <div><span>数据表[姓名|身份证号|地址|电话|授信额度|期限|用途]</span></div>
                     <div><span>|___[首次贷后|日期[日期格式]](如已经检查，条目显示绿色)</span></div>
                     <div><span>|___[第一次贷后|日期[日期格式]](如已经检查，条目显示绿色)</span></div>

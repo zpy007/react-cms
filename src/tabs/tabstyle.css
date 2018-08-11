@@ -1,11 +1,23 @@
 
-  .tabtitle{
-      width:100%;
-      position: static;
-      background-color: rgb(192, 135, 65);
-      top:0px;
-      left:167px;
-  }
+.tabtitle{
+  width:100%;
+  position: static;
+  background-color: rgb(192, 135, 65);
+  top:0px;
+  left:167px;
+}
+.search-component{
+  text-align: center;
+  width:100%;
+  position:relative;
+}
+.search-input{
+  content:输入姓名搜索;
+}
+
+.search-button{
+  position:relative;
+}
   
   
   

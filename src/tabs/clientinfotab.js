@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import TableContainer from '../table/tablecontainer';
+import SearchComponent from './searchcomponent'
 import './tabstyle.css'
 
 var mockColumns = [
@@ -40,7 +41,7 @@ export default class ClientInfoTab extends Component{
             <div>
                 <span>客户信息选项卡</span>
                 <div>
-                    <div><span>【搜索框】搜索按钮</span></div>
+                    <SearchComponent/>
                     <div className="table">
                     <TableContainer Columns={mockColumns}
                         Data={mockClientsData}/>
