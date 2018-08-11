@@ -4,20 +4,7 @@ body {
   font-family: sans-serif;
 }
 
-.menu-container{
-  width: 120px;
-  
-  font-size: 14px;
-  background-color: rgb(71, 177, 102);
-  border: 3px solid #6f5196;
-  padding: 20px;
-}
 
-.menu-item{
-  background-color: rgb(207, 150, 85);
-  border: solid;
-  margin: 10px;
-}
 
 .display-tab{
   display:block;

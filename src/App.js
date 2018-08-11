@@ -4,13 +4,13 @@ import MenuContainer from './menu/menucontainer';
 import './App.css';
 
 class App extends Component {
-  static childContextTypes={
-    openedTab:PropTypes.array,
-    activeTab:PropTypes.string,
-    _insertTab:PropTypes.func,
-    _activeTab:PropTypes.func
+  static childContextTypes = {
+    openedTab: PropTypes.array,
+    activeTab: PropTypes.string,
+    _insertTab: PropTypes.func,
+    _activeTab: PropTypes.func
   }
-  constructor(){
+  constructor() {
     super();
     this.state = {
       openedTab: [],
@@ -19,36 +19,36 @@ class App extends Component {
         tabcontent: {
           display: 'none'
         },
-        displaytabitem:{
-          display:'block'
+        displaytabitem: {
+          display: 'none'
         }
       }
     }
   }
-  componentWillUpdate(){
+  componentWillUpdate() {
     console.log("update");
 
   }
-  getChildContext(){
-    return{
-      openedTab:this.state.openedTab,
-      activeTab:'',
-      _insertTab:this._insertTab.bind(this),
-      _activeTab:this._activeTab.bind(this)
+  getChildContext() {
+    return {
+      openedTab: this.state.openedTab,
+      activeTab: '',
+      _insertTab: this._insertTab.bind(this),
+      _activeTab: this._activeTab.bind(this)
     }
   }
-  
-  _insertTab(item){
-    console.log("App::this._insertTab--->"+item.title);
+
+  _insertTab(item) {
+    console.log("App::this._insertTab--->" + item.title);
     this.state.openedTab.push(item);
     this.setState({
-      openedTab:this.state.openedTab
+      openedTab: this.state.openedTab
     });
     console.log(this.state.openedTab);
-    
+
   }
-  watch(){
-    console.log("App::watch:this.state.activeTab: "+this.state.activeTab);
+  watch() {
+    console.log("App::watch:this.state.activeTab: " + this.state.activeTab);
   }
   handleChangeTab(item) {
     console.log("App::handleChangeTab " + item.title + "--|");
@@ -56,7 +56,7 @@ class App extends Component {
     this.setState({
       styles: {
         tabcontent: {
-          display:'none'
+          display: 'none'
         }
       }
     })
@@ -84,23 +84,27 @@ class App extends Component {
         border-top: none;
       }*/
       <div className="App">
-        <div className="menu"> 
-          <MenuContainer />
+        <div className="layout-title">
         </div>
-        <div className="tabcontainer">
-          <div className="tabtitle" >
-              <span>按钮</span>
+        <div className="layout-content">
+          <div className="layout-menucontainer">
+            <MenuContainer />
           </div>
-          <div className="tabcontent">
-              {this.state.openedTab.map((item,i)=>{
-                console.log("this.item.title: "+item.title);
-                console.log("this.state.activeTab: "+item.title);
+          <div className="layout-tabcontainer">
+            <div className="tabtitle" >
+              <span>按钮</span>
+            </div>
+            <div className="tabcontent">
+              {this.state.openedTab.map((item, i) => {
+                console.log("this.item.title: " + item.title);
+                console.log("this.state.activeTab: " + item.title);
                 return (
-                  <div key={i} style={item.title===this.state.activeTab?{}:this.state.styles.tabcontent}>
-                      {item.target}
+                  <div key={i} style={item.title === this.state.activeTab ? {} : this.state.styles.tabcontent}>
+                    {item.target}
                   </div>
                 )
               })}
+            </div>
           </div>
         </div>
       </div>

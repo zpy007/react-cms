@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './tablestyle.css'
 
 export default class TableItem extends Component {
     render() {

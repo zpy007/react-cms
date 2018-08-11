@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import TableContainer from '../table/tablecontainer';
+import './tabstyle.css'
 
 var mockColumns = [
     { field: "clientname", title: "姓名" },

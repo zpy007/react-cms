@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-
+import './tabstyle.css'
 
 export default class GuaranteeInfoTab extends Component{
     render(){

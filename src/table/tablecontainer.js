@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import TableItem from './tableitem' 
+import './tablestyle.css'
 
 export default class TableContainer extends Component{
     render(){

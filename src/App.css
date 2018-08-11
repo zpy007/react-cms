@@ -1,21 +1,3 @@
-.tabcontainer{
-  width:500px;
-  position: absolute;
-  background-color: bisque;
-  top:25px;
-  left:167px;
-  display:'';
-}
-.tabtitle{
-    width:150px;
-    position: static;
-    background-color: rgb(192, 135, 65);
-    top:0px;
-    left:167px;
-}
-
-
-
 
 .App {
   text-align: center;
@@ -45,3 +27,38 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+/*layout control*/
+.layout-title{
+  width:100%;
+  height:140px;
+  background-image:url(resources/cms-title.jpg);
+  background-position:center -140px;
+}
+
+.layout-content{
+  height:550px;
+  margin: 1px;
+  padding: 1px;
+  border:2px solid;
+}
+.layout-menucontainer{
+  width:13%;
+  position: relative;
+  background-color: bisque;
+  float:left;
+  display:'';
+}
+
+.layout-tabcontainer{
+  width:86%;
+  height:550px;
+  position: relative;
+  margin:1px;
+  background-color: bisque;
+  float:right;
+  display:'';
+  border:1px solid;
+}
+

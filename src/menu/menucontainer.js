@@ -3,6 +3,7 @@ import MenuItem from './menuitem';
 import ClientInfoTab from  '../tabs/clientinfotab';
 import AftercreditInfoTab from '../tabs/aftercreditinfotab';
 import GuaranteeInfoTab from '../tabs/guaranteeinfotab';
+import './menustyle.css'
 
 export default class MenuContainer extends Component{
     constructor(){

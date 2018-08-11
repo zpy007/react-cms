@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import './tabstyle.css'
 
 var mockjson1={
     "status": 200,
